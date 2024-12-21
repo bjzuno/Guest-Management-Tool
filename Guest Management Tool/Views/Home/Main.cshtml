@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <div class="container px-4 py-2">
+        <div class="album py-5 bg-body-light">
+            <div class="container agdasima-regular">
+                <div id="project-cards" class="row row-cols-1 row-cols-sm-2 row-cols-md-4    g-3">
+                    <div class="col hidden shown">
+                        <div class="card shadow-sm">
+                            <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" src="~/Images/hotel-room-phone.jpg" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
+                            <div class="card-body">
+                                <h5 class="card-title">Guest Information</h5>
+                                <p class="card-text">View and update your personal details, including contact information and preferences, to help us provide a personalized experience.</p>
+                                <a class="btn btn-primary" asp-controller="GuestInformation" asp-action="Index">Take me there!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col hidden shown">
+                        <div class="card shadow-sm">
+                            <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" src="~/Images/dietarymeal.jpg" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
+                            <div class="card-body">
+                                <h5 class="card-title">Dietary Information and Restriction</h5>
+                                <p class="card-text">
+                                    Review and manage your dietary preferences, restrictions, and allergies to ensure we meet your specific meal needs.
+                                </p>
+                                <a class="btn btn-primary" asp-controller="GuestDietary" asp-action="Index">Take me there!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col hidden">
+                        <div class="card shadow-sm">
+                            <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" src="~/Images/wellness.jpg" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
+                            <div class="card-body">
+                                <h5 class="card-title">Health and Wellness</h5>
+                                <p class="card-text">Keep track of your health and wellness information, including any medical conditions or preferences, so we can better cater to your overall well-being.</p>
+                                <a class="btn btn-primary" asp-controller="GuestWellness" asp-action="Index">Take me there!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col hidden">
+                        <div class="card shadow-sm">
+                            <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" src="~/Images/feedback.jpg" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
+                            <div class="card-body">
+                                <h5 class="card-title">Event History</h5>
+                                <p class="card-text">
+                                    Browse the list of events that you've attended with us, along with details and any feedback you may have provided.
+                                </p>
+                                <br />
+                                <a class="btn btn-primary" asp-controller="EventHistory" asp-action="Index">Take me there!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

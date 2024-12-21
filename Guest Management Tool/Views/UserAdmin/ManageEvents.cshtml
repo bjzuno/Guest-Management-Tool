@@ -1,0 +1,41 @@
+﻿@model IEnumerable<GuestEvent>
+
+<h2>Manage Guest Events</h2>
+
+<!-- Add Profession Form -->
+<form asp-action="AddGuestEvent" method="post">
+    <input type="text" name="name" placeholder="Enter new event.." required />
+    <input type="text" name="label" placeholder="Enter event examples.." required />
+    <button class="btn btn-primary" type="submit">Add Event</button>
+</form>
+
+<!-- Profession List -->
+<table>
+    <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var guestEvent in Model)
+        {
+            <tr>
+                <td>@guestEvent.Name</td>
+                <td>
+                    <form asp-action="RemoveGuestEvent" method="post">
+                        <input type="hidden" name="id" value="@guestEvent.Id" />
+                        <button class="btn btn-primary" type="submit">Remove</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<br />
+
+<a class="btn btn-primary" asp-controller="UserAdmin" asp-action="DataEntry">
+    Back to Menu
+</a>

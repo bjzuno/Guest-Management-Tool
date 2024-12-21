@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MedicalRequirement>
+
+<h2>Manage Medical Requirements</h2>
+
+<!-- Add Profession Form -->
+<form asp-action="AddMedicalRequirement" method="post">
+    <input type="text" name="name" placeholder="Enter new requirement.." required />
+    <button class="btn btn-primary" type="submit">Add Requirement</button>
+</form>
+
+<!-- Profession List -->
+<table>
+    <thead>
+        <tr>
+            <th>Requirement Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var medicalRequirement in Model)
+        {
+            <tr>
+                <td>@medicalRequirement.Name</td>
+                <td>
+                    <form asp-action="RemoveMedicalRequirement" method="post">
+                        <input type="hidden" name="id" value="@medicalRequirement.Id" />
+                        <button class="btn btn-primary" type="submit">Remove</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<br />
+
+<a class="btn btn-primary" asp-controller="UserAdmin" asp-action="DataEntry">
+    Back to Menu
+</a>

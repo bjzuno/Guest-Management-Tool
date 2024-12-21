@@ -1,0 +1,40 @@
+﻿@model IEnumerable<FoodAllergy>
+
+<h2>Manage Food Allergies</h2>
+
+<!-- Add Profession Form -->
+<form asp-action="AddFoodAllergy" method="post">
+    <input type="text" name="name" placeholder="Enter new allergen.." required />
+    <button class="btn btn-primary" type="submit">Add Allergen</button>
+</form>
+
+<!-- Profession List -->
+<table>
+    <thead>
+        <tr>
+            <th>Allergen Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var foodAllergy in Model)
+        {
+            <tr>
+                <td>@foodAllergy.Name</td>
+                <td>
+                    <form asp-action="RemoveFoodAllergy" method="post">
+                        <input type="hidden" name="id" value="@foodAllergy.Id" />
+                        <button class="btn btn-primary" type="submit">Remove</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<br />
+
+<a class="btn btn-primary" asp-controller="UserAdmin" asp-action="DataEntry">
+    Back to Menu
+</a>

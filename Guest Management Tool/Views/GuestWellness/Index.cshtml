@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <div class="bd-example">
+        <form>
+            <div class="form-group">
+                <label for="medReq">Medical Requirements</label>
+                <select class="form-control" id="medReq" style="width:250px">
+                    @foreach (var medical in Model.Medical)
+                    {
+                         <option value="@medical.Id">@medical.Name</option>
+                    }
+                </select>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <label for="wellnessPref">Wellness Preferences</label>
+                <select class="form-control" id="wellnessPref" style="width:250px">
+                    @foreach (var wellness in Model.Wellness)
+                    {
+                        <option value="@wellness.Id">@wellness.Name</option>
+                    }
+                </select>
+            </div>
+
+            <br />
+
+            <div class="form-group form-row">
+                <label for="accessReq">Accessibility Requirements</label>
+                <select class="form-control" id="accessReq" style="width:250px">
+                    @foreach (var access in Model.Access)
+                    {
+                        <option value="@access.Id">@access.Name</option>
+                    }
+                </select>
+            </div>
+
+            <br />
+
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Main">Submit</a>
+        </form>
+    </div>
+}

@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <div class="bd-example">
+        <form>
+            <div class="form-group">
+                <label for="prevEvents">Previous Events Attended</label>
+                <select id="prevEvents" class="form-control" style="width: 250px;">
+                    @foreach (var guestEvent in Model)
+                    {
+                        <option value="@guestEvent.Id">@guestEvent.Name - @guestEvent.Label</option>
+                    }
+                </select>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <label for="prevEvents">Level of Satisfaction</label><br />
+                <input type="radio" value="1" name="rating" /><label>⭐ - Very Dissatisfied</label><br />
+                <input type="radio" value="2" name="rating" /><label>⭐⭐ - Dissatisfied</label><br />
+                <input type="radio" value="3" name="rating" /><label>⭐⭐⭐ - Neutral</label><br />
+                <input type="radio" value="4" name="rating" /><label>⭐⭐⭐⭐ - Satisfied</label><br />
+                <input type="radio" value="5" name="rating" /><label>⭐⭐⭐⭐⭐ - Very Satisfied</label><br />
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <label for="feedback">Feedback</label>
+                <textarea class="form-control" id="feedback" style="width: 250px;" rows="3"></textarea>
+            </div>
+
+            <br />
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Main">Submit</a>
+        </form>
+    </div>
+}

@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <div class="bd-example">
+        <form>
+            <div class="form-group">
+                <label for="dietPref">Dietary Preferences</label>
+                <select class="form-control" id="dietPref" style="width:250px">
+                    @foreach (var diet in Model.Diet)
+                    {
+                        <option value="@diet.Id">@diet.Name</option>
+                    }
+                </select>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <label for="foodAllergy">Food Allergies</label>
+                <select class="form-control" id="foodAllergy" style="width:250px">
+                    @foreach (var allergy in Model.Allergy)
+                    {
+                        <option value="@allergy.Id">@allergy.Name</option>
+                    }
+                </select>
+            </div>
+
+            <br />
+
+            <div class="form-group form-row">
+                <label for="dietRequest">Special Diet Request</label>
+                <input type="text" class="form-control" id="dietRequest" style="width:250px" placeholder="Diet Request..">
+            </div>
+
+            <br />
+
+            <div class="form-group form-row">
+                <label for="favoriteFandB">Favorite Food and Beverages</label>
+                <input type="text" class="form-control" id="favoriteFandB" style="width:250px" placeholder="Favorite Food..">
+            </div>
+
+            <br />
+
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Main">Submit</a>
+        </form>
+    </div>
+}

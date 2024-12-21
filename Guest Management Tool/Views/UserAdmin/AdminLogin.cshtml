@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    <main class="d-flex justify-content-center form-signin">
+        <form>
+            <h1 class="h3 mb-3 fw-normal">Admin Login</h1>
+
+            <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" style="width:250px">
+                <label for="floatingInput">Username</label>
+            </div>
+            <br />
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" style="width:250px">
+                <label for="floatingPassword">Password</label>
+            </div>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <a class="btn btn-primary" asp-controller="UserAdmin" asp-action="DataEntry">
+                Login
+            </a>
+        </form>
+    </main>
+
+}
